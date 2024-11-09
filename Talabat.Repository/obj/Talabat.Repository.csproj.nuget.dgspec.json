@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\C#\\Talabat.APIs\\Talabat.Repository\\Talabat.Repository.csproj": {}
+    "C:\\Users\\hhhh\\Desktop\\Talabat.APIs\\Talabat.Repository\\Talabat.Repository.csproj": {}
   },
   "projects": {
-    "C:\\C#\\Talabat.APIs\\Talabat.Core\\Talabat.Core.csproj": {
+    "C:\\Users\\hhhh\\Desktop\\Talabat.APIs\\Talabat.Core\\Talabat.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\C#\\Talabat.APIs\\Talabat.Core\\Talabat.Core.csproj",
+        "projectUniqueName": "C:\\Users\\hhhh\\Desktop\\Talabat.APIs\\Talabat.Core\\Talabat.Core.csproj",
         "projectName": "Talabat.Core",
-        "projectPath": "C:\\C#\\Talabat.APIs\\Talabat.Core\\Talabat.Core.csproj",
+        "projectPath": "C:\\Users\\hhhh\\Desktop\\Talabat.APIs\\Talabat.Core\\Talabat.Core.csproj",
         "packagesPath": "C:\\Users\\hhhh\\.nuget\\packages\\",
-        "outputPath": "C:\\C#\\Talabat.APIs\\Talabat.Core\\obj\\",
+        "outputPath": "C:\\Users\\hhhh\\Desktop\\Talabat.APIs\\Talabat.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -69,14 +69,14 @@
         }
       }
     },
-    "C:\\C#\\Talabat.APIs\\Talabat.Repository\\Talabat.Repository.csproj": {
+    "C:\\Users\\hhhh\\Desktop\\Talabat.APIs\\Talabat.Repository\\Talabat.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\C#\\Talabat.APIs\\Talabat.Repository\\Talabat.Repository.csproj",
+        "projectUniqueName": "C:\\Users\\hhhh\\Desktop\\Talabat.APIs\\Talabat.Repository\\Talabat.Repository.csproj",
         "projectName": "Talabat.Repository",
-        "projectPath": "C:\\C#\\Talabat.APIs\\Talabat.Repository\\Talabat.Repository.csproj",
+        "projectPath": "C:\\Users\\hhhh\\Desktop\\Talabat.APIs\\Talabat.Repository\\Talabat.Repository.csproj",
         "packagesPath": "C:\\Users\\hhhh\\.nuget\\packages\\",
-        "outputPath": "C:\\C#\\Talabat.APIs\\Talabat.Repository\\obj\\",
+        "outputPath": "C:\\Users\\hhhh\\Desktop\\Talabat.APIs\\Talabat.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -97,8 +97,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\C#\\Talabat.APIs\\Talabat.Core\\Talabat.Core.csproj": {
-                "projectPath": "C:\\C#\\Talabat.APIs\\Talabat.Core\\Talabat.Core.csproj"
+              "C:\\Users\\hhhh\\Desktop\\Talabat.APIs\\Talabat.Core\\Talabat.Core.csproj": {
+                "projectPath": "C:\\Users\\hhhh\\Desktop\\Talabat.APIs\\Talabat.Core\\Talabat.Core.csproj"
               }
             }
           }

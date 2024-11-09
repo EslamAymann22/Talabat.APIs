@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,17 +17,28 @@ namespace Talabat.Repository
             _DbContext = DbContext;
         }
 
-        public Task<IEnumerable<T>> GetAllAsync()
+        public async Task<IEnumerable<T>> GetAllAsync()
         {
-
-            return (Task<IEnumerable<T>>)_DbContext.Set<T>().ToList();
-
-            //throw new NotImplementedException();
+            //return (Task<IEnumerable<T>>)_DbContext.Set<T>().ToList();
+            if (typeof(T) == typeof(Product))
+            {
+                return (IEnumerable<T>)await _DbContext.Products.Include(p => p.ProductBrand).Include(p => p.ProductType).ToListAsync();
+            }
+            return await  _DbContext.Set<T>().ToListAsync();
         }
 
-        public Task<T> GetByIdAsync(int id)
+        public async Task<T> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            //=> await _DbContext.Set<T>().Where(X => X.Id == id).FirstOrDefaultAsync();
+            //if (typeof(T) == typeof(Product))
+            //{
+            //    return  await _DbContext.Products.Include(p => p.ProductBrand).Include(p => p.ProductType)
+            //        .Where(P => P.Id == id).FirstOrDefault();
+
+            //}
+            return await _DbContext.Set<T>().FindAsync(id);
         }
+
+
     }
 }

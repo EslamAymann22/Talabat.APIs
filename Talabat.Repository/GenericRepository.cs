@@ -19,7 +19,6 @@ namespace Talabat.Repository
 
         public async Task<IEnumerable<T>> GetAllAsync()
         {
-            //return (Task<IEnumerable<T>>)_DbContext.Set<T>().ToList();
             if (typeof(T) == typeof(Product))
             {
                 return (IEnumerable<T>)await _DbContext.Products.Include(p => p.ProductBrand).Include(p => p.ProductType).ToListAsync();
@@ -29,13 +28,12 @@ namespace Talabat.Repository
 
         public async Task<T> GetByIdAsync(int id)
         {
-            //=> await _DbContext.Set<T>().Where(X => X.Id == id).FirstOrDefaultAsync();
-            //if (typeof(T) == typeof(Product))
-            //{
-            //    return  await _DbContext.Products.Include(p => p.ProductBrand).Include(p => p.ProductType)
-            //        .Where(P => P.Id == id).FirstOrDefault();
-
-            //}
+            ///=> await _DbContext.Set<T>().Where(X => X.Id == id).FirstOrDefaultAsync();
+            ///if (typeof(T) == typeof(Product))
+            ///{
+            ///    return  await _DbContext.Products.Include(p => p.ProductBrand).Include(p => p.ProductType)
+            ///        .Where(P => P.Id == id).FirstOrDefault();
+            ///}
             return await _DbContext.Set<T>().FindAsync(id);
         }
 

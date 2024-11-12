@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Talabat.APIsProject")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6a52f95e21ed9c30a6456e1f604e5a7259619505")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d79027ad0bf3de1913815fbfe35b85f6ae6bfffb")]
 [assembly: System.Reflection.AssemblyProductAttribute("Talabat.APIsProject")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Talabat.APIsProject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

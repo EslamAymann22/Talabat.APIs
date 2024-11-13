@@ -4,6 +4,11 @@ using System.Xml.Serialization;
 using Talabat.Core.Entities;
 using Talabat.Core.Repositories;
 using Talabat.Repository;
+using Talabat.Core;
+using Talabat.Core.Specifications;
+using System.Linq.Expressions;
+using AutoMapper;
+using Talabat.APIsProject.DTOs;
 
 namespace Talabat.APIsProject.Controllers
 {
@@ -11,26 +16,35 @@ namespace Talabat.APIsProject.Controllers
     public class ProductsController : APIBaseController
     {
         private readonly IGenericRepository<Product> _productRepo;
+        private readonly IMapper _mapper;
 
-        public ProductsController(IGenericRepository<Product> ProductRepo)
+        public ProductsController(IGenericRepository<Product> ProductRepo , IMapper mapper)
         {
             _productRepo = ProductRepo;
+            _mapper = mapper;
         }
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
         {
-            var Products = await _productRepo.GetAllAsync();
+            var Spec = new ProductWithBrandAndTypeSpecifications();
+            var Products = await _productRepo.GetAllAsyncGeneric(Spec);
+            var MappedProduct = _mapper.Map<IEnumerable<Product>, IEnumerable<ProductToReturnDto>>(Products);
+            //var Products = await _productRepo.GetAllAsyncGeneric(new BaseSpecification);
 
-            return Ok(Products);
+            //return Ok(Products);
+            return Ok(MappedProduct);
 
         }
 
         [HttpGet("{id}")]
         public async Task <ActionResult<Product>> GetProductById(int id)
         {
-            var product = await _productRepo.GetByIdAsync(id);
-            return Ok(product);
+            var Spec = new ProductWithBrandAndTypeSpecifications(id);
+            var product = await _productRepo.GetByIdAsyncGeneric(Spec);
+            var MappedProduct = _mapper.Map<Product, ProductToReturnDto>(product);
+            //return Ok(product);
+            return Ok(MappedProduct);
         }
 
     }

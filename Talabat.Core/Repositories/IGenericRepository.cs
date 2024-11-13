@@ -4,13 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Talabat.Core.Entities;
+using Talabat.Core.Specifications;
 
 namespace Talabat.Core.Repositories
 {
     public interface IGenericRepository<T> where T : BaseEntity
     {
-
-        Task<IEnumerable<T>> GetAllAsync();
+        // without Generic include 
+        Task<IEnumerable<T>> GetAllAsync(); 
         Task<T> GetByIdAsync(int id);
+        // without Generic include 
+
+
+
+        //// with Generic include  
+        
+        Task<IEnumerable<T>> GetAllAsyncGeneric(ISpecifications<T> spe);
+        Task<T> GetByIdAsyncGeneric(ISpecifications<T> spe);
+
+
+        //// with Generic include  
     }
 }

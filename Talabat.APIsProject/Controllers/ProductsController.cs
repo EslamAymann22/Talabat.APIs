@@ -9,6 +9,7 @@ using Talabat.Core.Specifications;
 using System.Linq.Expressions;
 using AutoMapper;
 using Talabat.APIsProject.DTOs;
+using Talabat.APIsProject.Errors;
 
 namespace Talabat.APIsProject.Controllers
 {
@@ -42,6 +43,9 @@ namespace Talabat.APIsProject.Controllers
         {
             var Spec = new ProductWithBrandAndTypeSpecifications(id);
             var product = await _productRepo.GetByIdAsyncGeneric(Spec);
+            //if (product is null) return NotFound(new ApiResponses(404));
+            //if (product is null) return BadRequest("not Found this id");
+            if (product is null) return NotFound("not Found this id");
             var MappedProduct = _mapper.Map<Product, ProductToReturnDto>(product);
             //return Ok(product);
             return Ok(MappedProduct);

@@ -19,4 +19,16 @@
     <ProjectReference Include="..\Talabat.Repository\Talabat.Repository.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\Images\Products\hat-core1.png" />
+    <None Include="wwwroot\Images\Products\hat-react1.png" />
+    <None Include="wwwroot\Images\Products\hat-react2.png" />
+    <None Include="wwwroot\Images\Products\sb-ang1.png" />
+    <None Include="wwwroot\Images\Products\sb-ang2.png" />
+    <None Include="wwwroot\Images\Products\sb-core1.png" />
+    <None Include="wwwroot\Images\Products\sb-core2.png" />
+    <None Include="wwwroot\Images\Products\sb-react1.png" />
+    <None Include="wwwroot\Images\Products\sb-ts1.png" />
+  </ItemGroup>
+
 </Project>

@@ -6,7 +6,13 @@
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "Sort",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": [
       {
         "Type": "System.Collections.Generic.IEnumerable\u00601[[Talabat.APIsProject.DTOs.ProductToReturnDto, Talabat.APIsProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",

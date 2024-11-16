@@ -1,14 +1,16 @@
 ﻿using System.Net;
+using System.Text.Json;
+using Talabat.APIsProject.Errors;
 
 namespace Talabat.APIsProject.Middlewares
 {
     public class ExceptionsMiddleWares
     {
         private readonly RequestDelegate _next;
-        private readonly ILogger _logger;
+        private readonly ILogger<ExceptionsMiddleWares> _logger;
         private readonly IHostEnvironment _env;
 
-        public ExceptionsMiddleWares(RequestDelegate next ,ILogger logger,IHostEnvironment env)
+        public ExceptionsMiddleWares(RequestDelegate next, ILogger<ExceptionsMiddleWares> logger, IHostEnvironment env)
         {
             _next = next;
             _logger = logger;
@@ -19,7 +21,7 @@ namespace Talabat.APIsProject.Middlewares
         {
             try
             {
-                await _next.Invoke(context);
+                await _next(context);
             }
             catch (Exception ex)
             {
@@ -27,10 +29,24 @@ namespace Talabat.APIsProject.Middlewares
                 context.Response.ContentType = "application/json";
                 context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
-                if (_env.IsDevelopment())
+                ///if (_env.IsDevelopment())
+                ///{
+                ///    var Response = new ApiExceptionResponses((int)HttpStatusCode.InternalServerError, ex.Message,
+                ///        ex.StackTrace.ToString());
+                ///}
+                ///else
+                ///{
+                ///    var Response = new ApiExceptionResponses((int)HttpStatusCode.InternalServerError);
+                ///}
+                var Response = _env.IsDevelopment() ? new ApiExceptionResponses((int)HttpStatusCode.InternalServerError, ex.Message, ex.StackTrace.ToString()) : new ApiExceptionResponses((int)HttpStatusCode.InternalServerError);
+
+                var Option = new JsonSerializerOptions()
                 {
-                    //var Response = H
-                }
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+                };
+
+                var JsonResponse = JsonSerializer.Serialize(Response, Option);
+                context.Response.WriteAsync(JsonResponse);
 
 
             }

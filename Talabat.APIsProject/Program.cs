@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Talabat.APIsProject.Errors;
+using Talabat.APIsProject.Extensions;
 using Talabat.APIsProject.Helper;
 using Talabat.APIsProject.Middlewares;
 using Talabat.Core.Entities;
@@ -27,27 +28,7 @@ namespace Talabat.APIsProject
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
             //builder.Services.AddScoped(IGenericRepository<Product>, GenericRepository<Product>));
-            builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-
-            //builder.Services.AddAutoMapper(M => M.AddProfile(new MappingProfiles()));
-            builder.Services.AddAutoMapper(typeof(MappingProfiles));
-            //builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-
-            builder.Services.Configure<ApiBehaviorOptions>(options =>
-            {
-                options.InvalidModelStateResponseFactory = (actionContext) =>
-                {
-                    var errors = actionContext.ModelState.Where(M => M.Value.Errors.Count() > 0)
-                                             .SelectMany(E => E.Value.Errors)
-                                             .Select(E => E.ErrorMessage)
-                                             .ToList();
-                    var ValidationErrorResponse = new ApiValidationErrorsResponse
-                    {
-                        Errors = errors
-                    };
-                    return new BadRequestObjectResult(ValidationErrorResponse);
-                };
-            });
+            builder.Services.AddApplicationServices();
 
             var app = builder.Build();
 
@@ -55,10 +36,13 @@ namespace Talabat.APIsProject
             if (app.Environment.IsDevelopment())
             {
                 app.UseMiddleware<ExceptionsMiddleWares>();
-                app.UseSwagger();
-                app.UseSwaggerUI();
+                app.UseSwaggerMiddleWares();
             }
             app.UseStaticFiles();
+
+            //app.UseStatusCodePagesWithRedirects("/errors/{0}");
+            app.UseStatusCodePagesWithReExecute("/errors/{0}");
+
             app.UseHttpsRedirection();
 
             app.UseAuthorization();

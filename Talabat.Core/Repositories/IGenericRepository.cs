@@ -11,7 +11,7 @@ namespace Talabat.Core.Repositories
     public interface IGenericRepository<T> where T : BaseEntity
     {
         // without Generic include 
-        Task<IEnumerable<T>> GetAllAsync(); 
+        Task<IReadOnlyList<T>> GetAllAsync(); 
         Task<T> GetByIdAsync(int id);
         // without Generic include 
 
@@ -19,7 +19,7 @@ namespace Talabat.Core.Repositories
 
         //// with Generic include  
         
-        Task<IEnumerable<T>> GetAllAsyncGeneric(ISpecifications<T> spe);
+        Task<IReadOnlyList<T>> GetAllAsyncGeneric(ISpecifications<T> spe);
         Task<T> GetByIdAsyncGeneric(ISpecifications<T> spe);
 
 

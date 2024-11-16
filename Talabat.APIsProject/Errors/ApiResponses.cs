@@ -4,8 +4,8 @@ namespace Talabat.APIsProject.Errors
     public class ApiResponses
     {
 
-        int StatusCode;
-        string? Message = null;
+        public int StatusCode { get; set; }
+        public string? Message { get; set; } = null;
 
         public ApiResponses(int statusCode, string? message = null)
         {

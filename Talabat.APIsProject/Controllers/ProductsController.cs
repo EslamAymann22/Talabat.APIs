@@ -10,6 +10,7 @@ using System.Linq.Expressions;
 using AutoMapper;
 using Talabat.APIsProject.DTOs;
 using Talabat.APIsProject.Errors;
+using Talabat.APIsProject.Helper;
 
 namespace Talabat.APIsProject.Controllers
 {
@@ -33,16 +34,18 @@ namespace Talabat.APIsProject.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ProductToReturnDto>>> GetProducts(string? Sort = null)
+        public async Task<ActionResult<Pagination<ProductToReturnDto>>> GetProducts([FromQuery]ProductSpecParams Params)
         {
-            var Spec = new ProductWithBrandAndTypeSpecifications(Sort);
+            var Spec = new ProductWithBrandAndTypeSpecifications(Params);
             var Products = await _productRepo.GetAllAsyncGeneric(Spec);
+            var SpecCount = new ProductWithFiltrationForCount(Params);
+            var count = await _productRepo.GetCountWithSpecAsync(SpecCount);
             var MappedProduct = _mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>(Products);
             //var Products = await _productRepo.GetAllAsyncGeneric(new BaseSpecification);
 
             //return Ok(Products);
-            return Ok(MappedProduct);
-
+            //return Ok(MappedProduct);
+            return Ok(new Pagination<ProductToReturnDto>(Params.PageSize, Params.PageIndex, MappedProduct, count));
         }
 
         [HttpGet("{id}")]

@@ -9,3 +9,15 @@ C:\C#\Talabat.APIs\Talabat.Services\obj\Debug\net6.0\Talabat.Services.dll
 C:\C#\Talabat.APIs\Talabat.Services\obj\Debug\net6.0\refint\Talabat.Services.dll
 C:\C#\Talabat.APIs\Talabat.Services\obj\Debug\net6.0\Talabat.Services.pdb
 C:\C#\Talabat.APIs\Talabat.Services\obj\Debug\net6.0\ref\Talabat.Services.dll
+C:\Users\hhhh\Desktop\Talabat.APIs\Talabat.Services\bin\Debug\net6.0\Talabat.Services.deps.json
+C:\Users\hhhh\Desktop\Talabat.APIs\Talabat.Services\bin\Debug\net6.0\Talabat.Services.dll
+C:\Users\hhhh\Desktop\Talabat.APIs\Talabat.Services\bin\Debug\net6.0\Talabat.Services.pdb
+C:\Users\hhhh\Desktop\Talabat.APIs\Talabat.Services\obj\Debug\net6.0\Talabat.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hhhh\Desktop\Talabat.APIs\Talabat.Services\obj\Debug\net6.0\Talabat.Services.AssemblyInfoInputs.cache
+C:\Users\hhhh\Desktop\Talabat.APIs\Talabat.Services\obj\Debug\net6.0\Talabat.Services.AssemblyInfo.cs
+C:\Users\hhhh\Desktop\Talabat.APIs\Talabat.Services\obj\Debug\net6.0\Talabat.Services.csproj.CoreCompileInputs.cache
+C:\Users\hhhh\Desktop\Talabat.APIs\Talabat.Services\obj\Debug\net6.0\Talabat.Services.sourcelink.json
+C:\Users\hhhh\Desktop\Talabat.APIs\Talabat.Services\obj\Debug\net6.0\Talabat.Services.dll
+C:\Users\hhhh\Desktop\Talabat.APIs\Talabat.Services\obj\Debug\net6.0\refint\Talabat.Services.dll
+C:\Users\hhhh\Desktop\Talabat.APIs\Talabat.Services\obj\Debug\net6.0\Talabat.Services.pdb
+C:\Users\hhhh\Desktop\Talabat.APIs\Talabat.Services\obj\Debug\net6.0\ref\Talabat.Services.dll

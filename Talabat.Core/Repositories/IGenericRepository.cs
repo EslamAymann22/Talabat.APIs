@@ -22,6 +22,7 @@ namespace Talabat.Core.Repositories
         Task<IReadOnlyList<T>> GetAllAsyncGeneric(ISpecifications<T> spe);
         Task<T> GetByIdAsyncGeneric(ISpecifications<T> spe);
 
+        Task<int> GetCountWithSpecAsync(ISpecifications<T> spe);
 
         //// with Generic include  
     }

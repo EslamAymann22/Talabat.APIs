@@ -154,3 +154,5 @@ C:\Users\hhhh\Desktop\Talabat.APIs\Talabat.APIsProject\obj\Debug\net6.0\ref\Tala
 C:\Users\hhhh\Desktop\Talabat.APIs\Talabat.APIsProject\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\hhhh\Desktop\Talabat.APIs\Talabat.APIsProject\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\hhhh\Desktop\Talabat.APIs\Talabat.APIsProject\bin\Debug\net6.0\Talabat.APIsProject.staticwebassets.runtime.json
+C:\Users\hhhh\Desktop\Talabat.APIs\Talabat.APIsProject\bin\Debug\net6.0\Pipelines.Sockets.Unofficial.dll
+C:\Users\hhhh\Desktop\Talabat.APIs\Talabat.APIsProject\bin\Debug\net6.0\StackExchange.Redis.dll

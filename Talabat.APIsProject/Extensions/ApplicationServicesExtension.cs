@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using StackExchange.Redis;
 using Talabat.APIsProject.Errors;
 using Talabat.APIsProject.Helper;
 using Talabat.Core.Repositories;
@@ -12,7 +13,9 @@ namespace Talabat.APIsProject.Extensions
         public static IServiceCollection AddApplicationServices (this IServiceCollection Services) {
 
             Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-
+            Services.AddScoped(typeof(IBasketRepository), typeof(BasketRepository));
+            //Services.AddScoped<IBasketRepository, BasketRepository>();
+            
             //builder.Services.AddAutoMapper(M => M.AddProfile(new MappingProfiles()));
             Services.AddAutoMapper(typeof(MappingProfiles));
             //builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));

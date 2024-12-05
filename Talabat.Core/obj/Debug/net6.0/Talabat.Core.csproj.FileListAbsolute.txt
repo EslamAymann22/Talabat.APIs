@@ -21,3 +21,4 @@ C:\Users\hhhh\Desktop\Talabat.APIs\Talabat.Core\obj\Debug\net6.0\Talabat.Core.dl
 C:\Users\hhhh\Desktop\Talabat.APIs\Talabat.Core\obj\Debug\net6.0\refint\Talabat.Core.dll
 C:\Users\hhhh\Desktop\Talabat.APIs\Talabat.Core\obj\Debug\net6.0\Talabat.Core.pdb
 C:\Users\hhhh\Desktop\Talabat.APIs\Talabat.Core\obj\Debug\net6.0\ref\Talabat.Core.dll
+C:\Users\hhhh\Desktop\Talabat.APIs\Talabat.Core\obj\Debug\net6.0\Talabat.Core.csproj.AssemblyReference.cache

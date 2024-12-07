@@ -11,6 +11,8 @@ using AutoMapper;
 using Talabat.APIsProject.DTOs;
 using Talabat.APIsProject.Errors;
 using Talabat.APIsProject.Helper;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace Talabat.APIsProject.Controllers
 {
@@ -33,7 +35,9 @@ namespace Talabat.APIsProject.Controllers
             _productBrandRepo = productBrandRepo;
         }
 
-        [HttpGet]
+        //[Authorize (AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [Authorize]
+        [HttpGet]   
         public async Task<ActionResult<Pagination<ProductToReturnDto>>> GetProducts([FromQuery]ProductSpecParams Params)
         {
             var Spec = new ProductWithBrandAndTypeSpecifications(Params);

@@ -167,3 +167,7 @@ C:\Users\hhhh\Desktop\Talabat.APIs\Talabat.APIsProject\bin\Debug\net6.0\Microsof
 C:\Users\hhhh\Desktop\Talabat.APIs\Talabat.APIsProject\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
 C:\Users\hhhh\Desktop\Talabat.APIs\Talabat.APIsProject\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
 C:\Users\hhhh\Desktop\Talabat.APIs\Talabat.APIsProject\bin\Debug\net6.0\System.Collections.Immutable.dll
+C:\Users\hhhh\Desktop\Talabat.APIs\Talabat.APIsProject\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\hhhh\Desktop\Talabat.APIs\Talabat.APIsProject\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\hhhh\Desktop\Talabat.APIs\Talabat.APIsProject\bin\Debug\net6.0\Talabat.Services.dll
+C:\Users\hhhh\Desktop\Talabat.APIs\Talabat.APIsProject\bin\Debug\net6.0\Talabat.Services.pdb

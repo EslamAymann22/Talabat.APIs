@@ -42,7 +42,9 @@ namespace Talabat.APIsProject
             });
             //builder.Services.AddScoped(IGenericRepository<Product>, GenericRepository<Product>));
             builder.Services.AddApplicationServices();
-            builder.Services.AddAuthentication(); // UserManager SignInManager RoleManager
+
+            builder.Services.AddIdentityServices(builder.Configuration);///////
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -58,6 +60,7 @@ namespace Talabat.APIsProject
 
             app.UseHttpsRedirection();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
 
@@ -73,21 +76,20 @@ namespace Talabat.APIsProject
 
                 var DbContext = Services.GetRequiredService<StoreContext>();
                 await DbContext.Database.MigrateAsync();
-                //if (DbContext.Set<Product>().Count() == 0 ||
-                //    DbContext.Set<ProductBrand>().Count() == 0 ||
-                //    DbContext.Set<ProductType>().Count() == 0)
+                
 
-                var IdentityDbContext = Services.GetRequiredService<IdentityDbContext>();
+                var IdentityDbContext = Services.GetRequiredService<AppIdentityDbContext>();
                 await IdentityDbContext.Database.MigrateAsync();
 
                 var userManager = Services.GetRequiredService<UserManager<AppUser>>();
                 await AppIdentityDbContextSeed.SeedUserAsync(userManager);
+
                 await StoreContextSeed.SeedAsync(DbContext);
             }
             catch (Exception ex)
             {
                 var Logger = LoggerFactory.CreateLogger<Program>();
-                Logger.LogError(ex, "Error During make update database in program");
+                Logger.LogError(ex, "Error During make update database in program***");
             }
 
             #endregion

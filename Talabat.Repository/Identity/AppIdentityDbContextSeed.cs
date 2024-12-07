@@ -21,7 +21,7 @@ namespace Talabat.Repository.Identity
                 UserName = "Eslam_Aymann22",
                 PhoneNumber = "01234567891"
             };
-            await userManager.CreateAsync(User, "eslam123");
+            await userManager.CreateAsync(User, "Pa$$w0rD");
         }
 
     }
